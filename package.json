@@ -1,0 +1,25 @@
+{
+  "name": "NYXEYE",
+  "version": "0.1.1",
+  "private": true,
+  "scripts": {
+    "start": "node nyxeye.js"
+  },
+  
+  
+  "dependencies": {
+  
+    "express": "3.*",
+    "jade": "*",
+    "stylus": "*",
+	"mongodb": "*",
+	"log4js": "*",
+	"async": "*",
+	"ipv4-tools": ">= 0.1.5b",
+	"request": "*",
+	"cors": "*",
+	"toobusy-js": "*",
+	"graceful-fs": "*",
+	"look": "*"
+  }
+}

