@@ -3,7 +3,7 @@ NYXEYE
 ### Javascript Botnet Research System
 
 
-The main purpose of this project is the research of the risks and possible exploits, exploring the "daily used techs" and the way the Web is being implemented, such as websites, browsers, javascripts and all that which makes your “web surfing” experiences possible, practical, "eyecandy" and addicting.  
+The main purpose of this project is the research on the risks and possible exploits to create simple, efficient and stealthy botnets, exploring the "daily used techs" and the way the Web is being implemented, such as websites, browsers, javascripts and all that which makes your “web surfing” experiences possible, practical, "eyecandy" and addicting.
 
 
 **Concept Objectives:**
