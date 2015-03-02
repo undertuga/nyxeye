@@ -8,7 +8,7 @@ The main purpose of this project is the research of the risks and possible explo
 
 **Concept Objectives:**
 
-	* Research on existent and daily used and widely available tech, for creating viable and usable botnet networks, along with the insight for possible countermeasures or mitigation techniques.
+Research on existent and daily used and widely available tech, for creating viable and usable botnet networks, along with the insight for possible countermeasures or mitigation techniques.
 
 
 **Concept Rules:**
@@ -18,4 +18,4 @@ The main purpose of this project is the research of the risks and possible explo
 	* KISS and have fun!
 
 
-[Project Site](https://undertuga.github.io/nyxeye/)
+**More Info:** [NYXEYE Project Site](https://undertuga.github.io/nyxeye/)
