@@ -32,7 +32,7 @@ exports.pxrHandler = function(request, response){
 	
 	){response.send(402, 'boom...');}
 	else{
-	
+		
 		// declaring some needed holders
 		var rawurl = url.parse(request.url),
 			coredui = new DuiCore(),
@@ -43,7 +43,7 @@ exports.pxrHandler = function(request, response){
 		corereq.parseRequest(request, function(err, state){});
 		
 		// data gathering and saving prototypes exec
-		corereq.setIPv4(request.connection.remoteAddress, function(err, state){});
+		//corereq.setIPv4(request.connection.remoteAddress.replace('::ffff:', ''), function(err, state){});
 		
 		
 		// matching request for injection
@@ -57,7 +57,7 @@ exports.pxrHandler = function(request, response){
 				coredui.urlInjection(
 				
 					request.url, 
-					request.connection.remoteAddress, 
+					request.connection.remoteAddress.replace('::ffff:', ''), 
 					cnf.payload, 
 				
 				function(err, injres){
@@ -82,7 +82,8 @@ exports.pxrHandler = function(request, response){
 			else{
 				
 				// creating requester & listener instances
-				var proxy = http.createClient(reqport, request.headers['host']),
+				var hostdata = request.headers['host'].split(':'),
+					proxy = http.createClient(reqport, hostdata[0]),
 					proxy_request = proxy.request(request.method, request.url, request.headers); // src->srv 
 					
 				// declaring listeners...

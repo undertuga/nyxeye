@@ -15,7 +15,7 @@
 	"mongodb": "*",
 	"log4js": "*",
 	"async": "*",
-	"ipv4-tools": ">= 0.1.5b",
+	"ipv4-tools": ">= 0.1.6",
 	"request": "*",
 	"cors": "*",
 	"toobusy-js": "*",

@@ -39,8 +39,8 @@ ReqCore.prototype.setIPv4 = function(ipv4, callback){
 			if(err){errorlog.error(err); callback(null, false);}
 			if(count <= 0){
 				
-				var iptools = new IPv4Tools();
-				iptools.getNetworkData(ipv4, function(err, netdata){
+				var iplib = new IPv4Tools();
+				iplib.getNetworkData(ipv4, function(err, netdata){
 							
 					// fail safe bail out
 					if(err){errorlog.error(err); callback(null, false);}
@@ -73,6 +73,8 @@ ReqCore.prototype.setIPv4 = function(ipv4, callback){
 
 
 
+
+
 ReqCore.prototype.parseRequest = function(req, callback){
 	
 	// validating gathered request
@@ -94,7 +96,7 @@ ReqCore.prototype.parseRequest = function(req, callback){
 		// adding data to db
 		mongo.traffic.insert({
 			
-			ipv4: req.connection.remoteAddress,
+			ipv4: req.connection.remoteAddress.replace('::ffff:', ''),
 			reqdata: reqdata,
 			tstamp: new Date()
 			
