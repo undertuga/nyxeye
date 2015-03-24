@@ -231,7 +231,7 @@ mongo.init(function(error){
 		
 		
 		
-		
+		 /*
 		// IPv4 count banner
 		stats.countIPv4(function(err, count){
 			
@@ -239,6 +239,7 @@ mongo.init(function(error){
 			if(err){errorlog.error(err);}
 			eventlog.info('> IPv4 Count: ' + count);
 		});
+		*/
 		
 	}, 60000);	
 		
