@@ -89,7 +89,7 @@ DuiCore.prototype.urlInjection = function(xurl, srcip, payload, callback){
 		// clean up sweeper
 		var cleanup = function(){
 			
-			xdata.close();
+			//xdata.close();
 			dest.removeListener('finish', finish);
 			dest.removeListener('error', error);
 			src.removeListener('error', error);
