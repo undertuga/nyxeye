@@ -6,13 +6,13 @@ function nxtrk(nxid){
 	if(("withCredentials" in xhr1)){
 		
 		// XHR for Chrome / Firefox / Opera / Safari
-		xhr1.open('POST', 'http://somehost.duckdns.org/api', true);
+		xhr1.open('POST', 'http://somehost.domain.org/api', true);
 		
 	}else if(typeof(XDomainRequest) != 'undefined'){
 		
 		// XDomainRequest for IE
 		xhr1 = new XDomainRequest();
-		xhr1.open('POST', 'http://somehost.duckdns.org/api');
+		xhr1.open('POST', 'http://somehost.domain.org/api');
 		
 	}else{xhr1 = null;} // CORS NOT SUPPORTED
 	
@@ -45,13 +45,13 @@ function nxtrk(nxid){
 			if(("withCredentials" in xhr2)){
 	
 				// XHR for Chrome / Firefox / Opera / Safari
-				xhr2.open('POST', 'http://somehost.duckdns.org/api', true);
+				xhr2.open('POST', 'http://somehost.domain.org/api', true);
 				
 			}else if(typeof(XDomainRequest) != 'undefined'){
 				
 				// XDomainRequest for IE
 				xhr2 = new XDomainRequest();
-				xhr2.open('POST', 'http://somehost.duckdns.org/api');
+				xhr2.open('POST', 'http://somehost.domain.org/api');
 				
 			}else{xhr2 = null;} // CORS NOT SUPPORTED
 			
@@ -77,13 +77,13 @@ function nxtrk(nxid){
 				if(("withCredentials" in xhr2)){
 		
 					// XHR for Chrome / Firefox / Opera / Safari
-					xhr2.open('POST', 'http://somehost.duckdns.org/api', true);
+					xhr2.open('POST', 'http://somehost.domain.org/api', true);
 					
 				}else if(typeof(XDomainRequest) != 'undefined'){
 					
 					// XDomainRequest for IE
 					xhr2 = new XDomainRequest();
-					xhr2.open('POST', 'http://somehost.duckdns.org/api');
+					xhr2.open('POST', 'http://somehost.domain.org/api');
 					
 				}else{xhr2 = null;} // CORS NOT SUPPORTED
 				

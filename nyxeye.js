@@ -64,12 +64,11 @@ var stats = new StatsCore();
 
 cpl.set('port', process.env.PORT || cnf.port1);
 cpl.set('views', __dirname + '/views');
-cpl.set('view engine', 'jade');
+cpl.set('view engine', 'ejs');
 //cpl.use(express.logger('dev')); // EXPRESS HTTP REQUEST CONSOLE LOGGER
 cpl.use(express.bodyParser());
 cpl.use(express.methodOverride());
 cpl.use(cpl.router);
-cpl.use(require('stylus').middleware(__dirname + '/public'));
 cpl.use(express.static(path.join(__dirname, 'public')));
 cpl.use(cors());
 cpl.options('*', cors());
