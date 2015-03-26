@@ -1,61 +1,21 @@
 
-[2015-03-25 19:00:19.262] [ERROR] NIXEYE.ERROR - [Error: collection name must be a String]
-Error: collection name must be a String
-    at Error (native)
-    at checkCollectionName (/home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/lib/utils.js:69:11)
-    at new Collection (/home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/lib/collection.js:57:3)
-    at /home/undertuga/Projects/nyxeye/v1.0/core/db.core.js:56:29
-    at /home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/lib/db.js:200:5
-    at connectHandler (/home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/lib/server.js:272:7)
-    at g (events.js:199:16)
-    at emit (events.js:107:17)
-    at /home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/server.js:373:23
-    at /home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/server.js:770:13
-[2015-03-25 19:05:27.542] [ERROR] NIXEYE.ERROR - [Error: collection name must be a String]
-Error: collection name must be a String
-    at Error (native)
-    at checkCollectionName (/home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/lib/utils.js:69:11)
-    at new Collection (/home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/lib/collection.js:57:3)
-    at /home/undertuga/Projects/nyxeye/v1.0/core/db.core.js:56:29
-    at /home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/lib/db.js:200:5
-    at connectHandler (/home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/lib/server.js:272:7)
-    at g (events.js:199:16)
-    at emit (events.js:107:17)
-    at /home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/server.js:373:23
-    at /home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/server.js:770:13
-[2015-03-25 19:06:53.868] [ERROR] NIXEYE.ERROR - [Error: collection name must be a String]
-Error: collection name must be a String
-    at Error (native)
-    at checkCollectionName (/home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/lib/utils.js:69:11)
-    at new Collection (/home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/lib/collection.js:57:3)
-    at /home/undertuga/Projects/nyxeye/v1.0/core/db.core.js:56:29
-    at /home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/lib/db.js:200:5
-    at connectHandler (/home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/lib/server.js:272:7)
-    at g (events.js:199:16)
-    at emit (events.js:107:17)
-    at /home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/server.js:373:23
-    at /home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/server.js:770:13
-[2015-03-25 19:07:10.763] [ERROR] NIXEYE.ERROR - [Error: collection name must be a String]
-Error: collection name must be a String
-    at Error (native)
-    at checkCollectionName (/home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/lib/utils.js:69:11)
-    at new Collection (/home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/lib/collection.js:57:3)
-    at /home/undertuga/Projects/nyxeye/v1.0/core/db.core.js:56:29
-    at /home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/lib/db.js:200:5
-    at connectHandler (/home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/lib/server.js:272:7)
-    at g (events.js:199:16)
-    at emit (events.js:107:17)
-    at /home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/server.js:373:23
-    at /home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/server.js:770:13
-[2015-03-25 19:12:28.860] [ERROR] NIXEYE.ERROR - [Error: collection name must be a String]
-Error: collection name must be a String
-    at Error (native)
-    at checkCollectionName (/home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/lib/utils.js:69:11)
-    at new Collection (/home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/lib/collection.js:57:3)
-    at /home/undertuga/Projects/nyxeye/v1.0/core/db.core.js:56:29
-    at /home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/lib/db.js:200:5
-    at connectHandler (/home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/lib/server.js:272:7)
-    at g (events.js:199:16)
-    at emit (events.js:107:17)
-    at /home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/server.js:373:23
-    at /home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/server.js:770:13
+[2015-03-26 02:01:46.943] [ERROR] NIXEYE.ERROR - { [Error: listen EADDRINUSE] code: 'EADDRINUSE', errno: 'EADDRINUSE', syscall: 'listen' }
+Error: listen EADDRINUSE
+    at exports._errnoException (util.js:746:11)
+    at Server._listen2 (net.js:1129:14)
+    at listen (net.js:1155:10)
+    at Server.listen (net.js:1240:5)
+    at /home/undertuga/Projects/nyxeye/v1.0/nyxeye.js:169:38
+    at /home/undertuga/Projects/nyxeye/v1.0/core/db.core.js:61:4
+    at /home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/lib/mongodb/db.js:296:11
+    at process._tickCallback (node.js:355:11)
+[2015-03-26 02:01:46.949] [ERROR] NIXEYE.ERROR - { [Error: listen EADDRINUSE] code: 'EADDRINUSE', errno: 'EADDRINUSE', syscall: 'listen' }
+Error: listen EADDRINUSE
+    at exports._errnoException (util.js:746:11)
+    at Server._listen2 (net.js:1129:14)
+    at listen (net.js:1155:10)
+    at Server.listen (net.js:1240:5)
+    at /home/undertuga/Projects/nyxeye/v1.0/nyxeye.js:186:38
+    at /home/undertuga/Projects/nyxeye/v1.0/core/db.core.js:61:4
+    at /home/undertuga/Projects/nyxeye/v1.0/node_modules/mongodb/lib/mongodb/db.js:296:11
+    at process._tickCallback (node.js:355:11)
