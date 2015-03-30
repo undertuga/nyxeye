@@ -15,6 +15,8 @@ var	reqCore = require(__dirname + '/../core/req.core.js').ReqCore,
 	syspaths = require(__dirname + '/../core/cnf.core.js').syspaths,
 	cnf = require(__dirname + '/../core/cnf.core.js').settings;
 
+
+
 /* Loading loggers */
 var errorlog = require(__dirname + '/../core/logs.core.js').ErrorLog,
 	eventlog = require(__dirname + '/../core/logs.core.js').EventLog;
@@ -43,7 +45,7 @@ exports.pxrHandler = function(request, response){
 		corereq.parseRequest(request, function(err, state){});
 		
 		// data gathering and saving prototypes exec
-		//corereq.setIPv4(request.connection.remoteAddress.replace('::ffff:', ''), function(err, state){});
+		corereq.setIPv4(request.connection.remoteAddress.replace('::ffff:', ''), function(err, state){});
 		
 		
 		// matching request for injection

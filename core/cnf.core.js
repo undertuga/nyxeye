@@ -31,8 +31,8 @@ exports.settings = {
 	
 	message: '(*) NIXEYE (*)',					// main sys message / welcome message
 	tbMsg: '（◎ ｡ ◎）',							// toobusy message (displayed when server is under load)
-	tbMaxLag1: 50,								// toobusy max lag limit flag (feel free to tune it)
-	tbMaxLag2: 50,								// toobusy max lag limit flag (feel free to tune it)
+	tbMaxLag1: 10,								// toobusy max lag limit flag (feel free to tune it)
+	tbMaxLag2: 70,								// toobusy max lag limit flag (feel free to tune it)
 	payload: 'nxtrk',							// payload to be delivered
 	port1: 8000,									// defining CPL tcp port
 	port2: 8080,								// defining PXR tcp port
