@@ -36,11 +36,13 @@ var express = require('express'),
 	cnf = require(__dirname + '/core/cnf.core.js').settings;
 
 
+
 /* Mapping routes holders*/
 var afwRT = require('./routes/afw.route.js'),	// app firewall route
 	apiRT = require('./routes/api.route.js'),	// app API route
 	webRT = require('./routes/web.route.js'),	// app CPL route
 	pxrRT = require('./routes/pxr.route.js');	// app PXR route
+
 
 
 /* Loading loggers */
@@ -52,10 +54,14 @@ var errorlog = require(__dirname + '/core/logs.core.js').ErrorLog,
 /* Implementing toobusy limits */
 tb01.maxLag = cnf.tbMaxLag2;
 tb02.maxLag = cnf.tbMaxLag1;
+tb01.interval = cnf.tbInterval1;
+tb02.interval = cnf.tbInterval2;
+
 
 
 /* Declaring new stats instance */
 var stats = new StatsCore();
+
 
 
 /* 
@@ -74,10 +80,13 @@ cpl.use(cors());
 cpl.options('*', cors());
 
 
+
 /* CPL TOOBUSY MIDDLEWARE */
 cpl.use(function(req, res, next){
-  if(tb01()){res.send(503, cnf.tbMsg);}
-  else{next();}
+	
+	// checking load...
+	if(tb01()){res.send(503, cnf.tbMsg);}
+	else{next();}
 });
 
 /* :::::::::::::::::::::::::::::::::: */
@@ -95,11 +104,17 @@ cpl.use(function(req, res, next){
  
 pxr.set('port', process.env.PORT || cnf.port2);
 
-/* CPL TOOBUSY MIDDLEWARE */
+
+
+/* PXR TOOBUSY MIDDLEWARE */
 pxr.use(function(req, res, next){
-  if(tb02()){res.send(503, cnf.tbMsg);}
-  else{next();}
+	
+	// checking load...
+	if(tb02()){res.send(503, cnf.tbMsg);}
+	else{next();}
 });
+
+
 
 //pxr.use(express.logger('dev'));
 pxr.use(pxr.router);
@@ -152,10 +167,10 @@ pxr.post('*', pxrRT.pxrHandler);
 mongo.init(function(error){
 	
 	// fail safe bail out
-	if(error){errorlog.error(error); throw new Error('Main database is absent or disconnected...'); }
+	if(error){errorlog.error(error); throw new Error(cnf.dbErrorMsg); }
 	
 	// reset console
-	process.stdout.write('\u001B[2J\u001B[0;0f');
+	process.stdout.write(cnf.screenClean);
 	
 	
 	
