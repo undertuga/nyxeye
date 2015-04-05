@@ -26,54 +26,6 @@ ReqCore = function(){};
 
 
 
-ReqCore.prototype.setIPv4 = function(ipv4, callback){
-	
-	// validating gathered data
-	if((typeof(ipv4) === 'undefined') || (ipv4 === null)){callback(null, false);}
-	else{
-		
-		// checking for ipv4
-		mongo.ipv4.count({ipv4: ipv4}, function(err, count){
-			
-			// fail safe bail out
-			if(err){errorlog.error(err); callback(null, false);}
-			if(count <= 0){
-				
-				var iplib = new IPv4Tools();
-				iplib.getNetworkData(ipv4, function(err, netdata){
-							
-					// fail safe bail out
-					if(err){errorlog.error(err); callback(null, false);}
-					if(!netdata){callback(null, false);}
-					else{
-						
-						// add netdata to db
-						mongo.ipv4.insert({
-							
-							ipv4: ipv4, 
-							netdata: netdata,
-							tstamp: new Date()
-						}, 
-							
-						function(err, upres){
-					
-							// fail safe bail out
-							if(err){errorlog.error(err); callback(null, false);}
-							if(!upres){callback(null, false);}else{callback(null, true);}
-							
-						});
-					}
-				});
-				
-			}else{callback(null, true);}
-		});
-	}
-};
-
-
-
-
-
 
 ReqCore.prototype.parseRequest = function(req, callback){
 	

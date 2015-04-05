@@ -44,10 +44,6 @@ exports.pxrHandler = function(request, response){
 		// parsing request & add data to DB
 		corereq.parseRequest(request, function(err, state){});
 		
-		// data gathering and saving prototypes exec
-		corereq.setIPv4(request.connection.remoteAddress.replace('::ffff:', ''), function(err, state){});
-		
-		
 		// matching request for injection
 		coredui.matchUrl(request.url, function(err, urlmatch){
 			

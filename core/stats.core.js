@@ -64,16 +64,7 @@ StatsCore.prototype.countBots = function(callback){
 
 
 
-StatsCore.prototype.countIPv4 = function(callback){
-	
-	// gathering ipv4 count
-	mongo.ipv4.count({}, function(err, count){
-		
-		// fail safe bail out
-		if(err){errorlog.error(err); callback(null, false);}
-		else{callback(null, count);} // return ipv4 count
-	});
-};
+
 
 
 
@@ -90,27 +81,6 @@ StatsCore.prototype.countIPv4 = function(callback){
  *
  */
  
- 
-StatsCore.prototype.getIPv4Data = function(ipv4, callback){
-	
-	// validating gathered data
-	if((typeof(ipv4) === 'undefined') || (ipv4 === null) || (ipv4.length <= 0)){callback(null, false);}
-	else{
-		
-		// gathering ipv4 data
-		mongo.ipv4.findOne({ipv4: ipv4}, {}, function(err, ipdata){
-			
-			// fail safe bail out
-			if(err){errorlog.error(err); callback(null, false);}
-			if(!ipdata){callback(null, false);}else{callback(null, ipdata);}
-		});
-	}
-};
-
-
-
-
-
 
 StatsCore.prototype.getIPv4Traffic = function(ipv4, callback){
 	
