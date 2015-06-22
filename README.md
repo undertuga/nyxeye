@@ -1,5 +1,4 @@
 ### NYXEYE
-
 [![Build Status](https://travis-ci.org/undertuga/nyxeye.svg?branch=v1.0)](https://travis-ci.org/undertuga/nyxeye)
 ======
 ### Javascript Botnet Research System
