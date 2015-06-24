@@ -1,4 +1,4 @@
-### NYXEYE
+NYXEYE
 ======
 ### Javascript Botnet Research System
 
