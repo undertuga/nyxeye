@@ -9,7 +9,7 @@ The main purpose of this project is the research on the risks and possible explo
 
 **Concept Objectives:**
 
-Research on existent and daily used and widely available tech, for creating viable and usable botnet networks, along with the insight for possible countermeasures or mitigation techniques.
+Research on existent, daily used and widely available tech, for creating viable and usable botnet networks, along with the insight for possible countermeasures or mitigation techniques.
 
 
 **Concept Rules:**
