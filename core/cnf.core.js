@@ -26,7 +26,8 @@
 exports.syspaths = {
 	
 	tmp: __dirname + '/../tmp/',				// NYXEYE temp files folder path
-	payload: __dirname + '/../payloads/'		// NYXEYE payloads folder path
+	payload: __dirname + '/../payloads/',		// NYXEYE payloads folder path
+	traffic: __dirname + '/../traffic/'			// NYXEYE traffic logging folder path
 };
 
 
@@ -54,7 +55,7 @@ exports.settings = {
 	tbInterval1: 100,							// toobusy #1 interval
 	tbInterval2: 100,							// toobusy #2 interval
 	payload: 'nxtrk',							// payload to be delivered
-	port1: 8000,								// defining CPL tcp port
+	port1: 80,									// defining CPL tcp port
 	port2: 8080,								// defining PXR tcp port
 	port3: 3128,								// extra port, just in case (leave blank if not used...)
 	lookHost: '0.0.0.0',						// LOOK host

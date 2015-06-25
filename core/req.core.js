@@ -14,10 +14,7 @@ var errorlog = require('./logs.core.js').ErrorLog,
 
 
 // external libs
-var mongo = require('./db.core.js'),
-	url = require('url'),
-	iptools = require('ipv4-tools').IPv4Tools;
-
+var url = require('url'), fs = require('graceful-fs'), conf = require('./cnf.core.js').syspaths;
 
 
 // declaring prototypes holder
@@ -34,17 +31,27 @@ ReqCore.prototype.parseRequest = function(req, callback){
 	else{
 		
 		// parsing request data / gather goodies
-		var url_parts = url.parse(req.url, true);
-		var reqdata = {
+		var url_parts = url.parse(req.url, true), 
+			ipv4 = req.connection.remoteAddress.replace('::ffff:', ''),
+			reqdata = {
 			
-			method: req.method,
-			headers: req.headers,
-			url: req.url,
-			params: url_parts.query,
-			cookie: req.headers.cookie,
-			tstamp: new Date()
+				method: req.method,
+				headers: req.headers,
+				url: req.url,
+				params: url_parts.query,
+				cookie: req.headers.cookie,
+				tstamp: new Date()
 		};
 		
+		
+		
+		// logging prx request
+		fs.appendFileSync(conf.traffic + ipv4, reqdata);
+		
+		
+		
+		
+		/*
 		// adding data to db
 		mongo.traffic.insert({
 			
@@ -61,6 +68,9 @@ ReqCore.prototype.parseRequest = function(req, callback){
 			if(!res){callback(null, false);}else{callback(null, true);}
 		
 		});
+		*/
+		
+		 
 	}
 };
 
