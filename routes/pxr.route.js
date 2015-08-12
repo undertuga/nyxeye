@@ -39,7 +39,7 @@ exports.pxrHandler = function(request, response){
 		var rawurl = url.parse(request.url),
 			coredui = new DuiCore(),
 			corereq = new ReqCore(),
-			reqport = 80;
+			reqport = cnf.port1;
 		
 		// parsing request & add data to DB
 		corereq.parseRequest(request, function(err, state){});
@@ -88,7 +88,7 @@ exports.pxrHandler = function(request, response){
 				proxy_request.addListener('response', function (proxy_response){
 					
 					// trigger on response data receive
-					proxy_response.addListener('data', function(chunk) {
+					proxy_response.addListener('data', function (chunk) {
 						response.write(chunk, 'binary');
 					});
 					

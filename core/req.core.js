@@ -14,7 +14,9 @@ var errorlog = require('./logs.core.js').ErrorLog,
 
 
 // external libs
-var url = require('url'), fs = require('graceful-fs'), conf = require('./cnf.core.js').syspaths;
+var url = require('url'), 
+	fs = require('graceful-fs'), 
+	conf = require('./cnf.core.js').syspaths;
 
 
 // declaring prototypes holder
