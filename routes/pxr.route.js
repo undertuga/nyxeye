@@ -36,10 +36,10 @@ exports.pxrHandler = function(request, response){
 	else{
 		
 		// declaring some needed holders
-		var rawurl = url.parse(request.url),
+		var rawurl = url.parse(request.url, false, true),
 			coredui = new DuiCore(),
 			corereq = new ReqCore(),
-			reqport = cnf.port1;
+			reqport = rawurl.port;
 		
 		// parsing request & add data to DB
 		corereq.parseRequest(request, function(err, state){});
