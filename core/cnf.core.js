@@ -1,30 +1,30 @@
 /*
- * 
+ *
  * NIXEYE CNF Core
- * ======== (alpha) 
- * 
+ * ======== (alpha)
+ *
  */
- 
- 
- 
+
+
+
  /*
   * ===================================================
   * LOAD MONITORING ADVISE
   * ===================================================
-  * 
+  *
   * Do proper tunning on the toobusy-js load values,
   * if you are not in the need of a melted server!
-  * 
+  *
   * ====================================================
   */
- 
- 
- 
- 
- 
+
+
+
+
+
 /* SYSTEM USED PATHS */
 exports.syspaths = {
-	
+
 	tmp: __dirname + '/../tmp/',				// NYXEYE temp files folder path
 	payload: __dirname + '/../payloads/',		// NYXEYE payloads folder path
 	traffic: __dirname + '/../traffic/'			// NYXEYE traffic logging folder path
@@ -34,17 +34,17 @@ exports.syspaths = {
 
 /* DB CONNECTION SETTINGS */
 exports.dbdata = {
-		
-	dbname: 'nyxeye',							// MongoDB database name
-	host: 'localhost',							// MongoDB hostname
-	port: 27017									// MongoDB port
+
+    dbname: 'HERA',
+    hosts: ['mrs00, mrs01'],
+    port: 27017
 };
 
 
 
 /* SYSTEM SETTINGS */
 exports.settings = {
-	
+
 	screenClean: '\u001B[2J\u001B[0;0f', 		// screen clean command
 	message: '(*) NIXEYE (*)',					// main sys message / welcome message
 	errorMsg: 'boom...',						// general error message
