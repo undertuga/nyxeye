@@ -118,6 +118,11 @@ The byte threshold for the response body size before compression is considered
 for the response, defaults to `1kb`. This is a number of bytes, any string
 accepted by the [bytes](https://www.npmjs.com/package/bytes) module, or `false`.
 
+**Note** this is only an advisory setting; if the response size cannot be determined
+at the time the response headers are written, then it is assumed the response is
+_over_ the threshold. To guarantee the response size can be determined, be sure
+set a `Content-Length` response header.
+
 ##### windowBits
 
 The default value is `zlib.Z_DEFAULT_WINDOWBITS`, or `15`.
@@ -210,13 +215,13 @@ app.get('/events', function (req, res) {
 
 [MIT](LICENSE)
 
-[npm-image]: https://img.shields.io/npm/v/compression.svg?style=flat
+[npm-image]: https://img.shields.io/npm/v/compression.svg
 [npm-url]: https://npmjs.org/package/compression
-[travis-image]: https://img.shields.io/travis/expressjs/compression.svg?style=flat
+[travis-image]: https://img.shields.io/travis/expressjs/compression/master.svg
 [travis-url]: https://travis-ci.org/expressjs/compression
-[coveralls-image]: https://img.shields.io/coveralls/expressjs/compression.svg?style=flat
+[coveralls-image]: https://img.shields.io/coveralls/expressjs/compression/master.svg
 [coveralls-url]: https://coveralls.io/r/expressjs/compression?branch=master
-[downloads-image]: https://img.shields.io/npm/dm/compression.svg?style=flat
+[downloads-image]: https://img.shields.io/npm/dm/compression.svg
 [downloads-url]: https://npmjs.org/package/compression
-[gratipay-image]: https://img.shields.io/gratipay/dougwilson.svg?style=flat
+[gratipay-image]: https://img.shields.io/gratipay/dougwilson.svg
 [gratipay-url]: https://www.gratipay.com/dougwilson/

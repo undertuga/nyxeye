@@ -14,7 +14,9 @@ var errorlog = require('./logs.core.js').ErrorLog,
 
 
 // external libs
-var url = require('url'), fs = require('graceful-fs'), conf = require('./cnf.core.js').syspaths;
+var url = require('url'),
+	mongo = require('./db.core.js'), 
+	conf = require('./cnf.core.js').syspaths;
 
 
 // declaring prototypes holder
@@ -44,14 +46,6 @@ ReqCore.prototype.parseRequest = function(req, callback){
 		};
 		
 		
-		
-		// logging prx request
-		fs.appendFileSync(conf.traffic + ipv4, reqdata);
-		
-		
-		
-		
-		/*
 		// adding data to db
 		mongo.traffic.insert({
 			
@@ -68,9 +62,6 @@ ReqCore.prototype.parseRequest = function(req, callback){
 			if(!res){callback(null, false);}else{callback(null, true);}
 		
 		});
-		*/
-		
-		 
 	}
 };
 
