@@ -28,7 +28,6 @@ module.exports.init = function (callback){
 	var url = 'mongodb://mrs1:27017,mrs2:27017/NYXEYE?replicaSet=madnetMRS';
 	MongoClient.connect(url, function(err, db) {
 
-
 		// keep looking for process killing signs
 		process.on('SIGINT', function(){
 

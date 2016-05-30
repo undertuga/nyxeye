@@ -1,12 +1,12 @@
 /*
- * 
+ *
  * NIXEYE Bot Management Core
- * =================== (alpha) 
- * 
+ * =================== (alpha)
+ *
  */
- 
- 
- 
+
+
+
 // logger requires
 var errorlog = require('./logs.core.js').ErrorLog,
 	eventlog = require('./logs.core.js').EventLog;
@@ -26,20 +26,20 @@ StatsCore = function(){};
 
 
 
-/* 
- * 
- * STATS COUNTERS 
+/*
+ *
+ * STATS COUNTERS
  *
  */
 
 StatsCore.prototype.countTraffic = function(callback){
-	
+
 	// gathering traffic count
 	mongo.traffic.count({}, function(err, count){
-		
+
 		// fail safe bail out
 		if(err){errorlog.error(err); callback(null, false);}
-		else{callback(null, count);} // return traffic count
+		else{callback(null, count);}
 	});
 };
 
@@ -49,10 +49,10 @@ StatsCore.prototype.countTraffic = function(callback){
 
 
 StatsCore.prototype.countBots = function(callback){
-	
+
 	// gathering bot count
 	mongo.botnet.count({}, function(err, count){
-		
+
 		// fail safe bail out
 		if(err){errorlog.error(err); callback(null, false);}
 		else{callback(null, count);} // return bot count
@@ -75,31 +75,28 @@ StatsCore.prototype.countBots = function(callback){
 
 
 
-/* 
- * 
- * IPv4 DATA 
+/*
+ *
+ *  IPv4 DATA
  *
  */
- 
+
 
 StatsCore.prototype.getIPv4Traffic = function(ipv4, callback){
-	
+
 	// validating gathered data
 	if((typeof(ipv4) === 'undefined') || (ipv4 === null) || (ipv4.length <= 0)){callback(null, false);}
 	else{
-		
+
 		// gathering traffic data
 		mongo.traffic.find({ipv4: ipv4}, {}).toArray(function(err, iptraffic){
-			
+
 			// fail safe bail out
 			if(err){errorlog.error(err); callback(null, false);}
 			if(!iptraffic){callback(null, false);}else{callback(null, true);}
 		});
 	}
 };
-
-
-
 
 
 
