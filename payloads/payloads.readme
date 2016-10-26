@@ -1,0 +1,11 @@
+==================================================================
+					NYXEYE - PAYLOAD README
+==================================================================
+
+	This folder is the main holder for available javascript
+payloads to be injected.
+
+	filename	->	Uglyfied version of the payload 
+	*.bak		->	Development version of the payload
+	
+==================================================================
